@@ -18,9 +18,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Docker meta
         uses: docker/metadata-action@v4
-        images: 
-          ghcr.io/bianxm/actions-test
         with:
+          images: 
+            ghcr.io/bianxm/actions-test
           tags: |
             type=semver,patter={{version}}
             type=semver,pattern={{major}}.{{minor}}
