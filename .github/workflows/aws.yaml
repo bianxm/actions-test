@@ -1,21 +1,21 @@
-name: aws-test
+# name: aws-test
 
-on:
-    push
+# on:
+#     push
 
-jobs:
-    test-aws:
-        runs-on: ubuntu-latest
-        permissions:
-            id-token: write
-        steps:
-            - 
-                name: Configure AWS Credentials
-                uses: aws-actions/configure-aws-credentials@v2
-                with:
-                    role-to-assume: arn:aws:iam::841962404661:role/github-oidc-role
-                    aws-region: us-east-2
-            - 
-                name: Reboot EC2 instance
-                run: |
-                    aws ec2 reboot-instances --instance-ids ${{ secrets.INSTANCE_ID }}
+# jobs:
+#     test-aws:
+#         runs-on: ubuntu-latest
+#         permissions:
+#             id-token: write
+#         steps:
+#             - 
+#                 name: Configure AWS Credentials
+#                 uses: aws-actions/configure-aws-credentials@v2
+#                 with:
+#                     role-to-assume: arn:aws:iam::841962404661:role/github-oidc-role
+#                     aws-region: us-east-2
+#             - 
+#                 name: Reboot EC2 instance
+#                 run: |
+#                     aws ec2 reboot-instances --instance-ids ${{ secrets.INSTANCE_ID }}
